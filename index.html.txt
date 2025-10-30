@@ -35,7 +35,7 @@
                 <p class="text-center p-3 font-semibold">什麼都有書店</p>
             </div>
 
-            <!-- 卡片 3: 原來發明筷子不是為了吃飯 (已修正) -->
+            <!-- 卡片 3: 原來發明筷子不是為了吃飯 -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-2">
                 <img src="原來發明筷子不是為了吃.jpg" alt="原來發明筷子不是為了吃飯" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">原來發明筷子不是為了吃飯</p>
@@ -47,7 +47,7 @@
                 <p class="text-center p-3 font-semibold">只是玩笑話為什麼不能說</p>
             </div>
 
-            <!-- 卡片 5: 怎麼轉成這樣 -->
+            <!-- 卡片 5: 怎麼睡成這樣 -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-4">
                 <img src="怎麼睡成這樣.jpg" alt="怎麼睡成這樣" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">怎麼睡成這樣</p>
@@ -73,7 +73,7 @@
             
             <!-- 卡片 9: 童話裡的建築大師 -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-8">
-                <img src="童話裡的建築大師.jpg" alt="童話裡的建築大師" class="w-full h-auto object-cover aspect-square">
+                <img src="童話裡的建築大SI.jpg" alt="童話裡的建築大師" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">童話裡的建築大師</p>
             </div>
 
@@ -105,6 +105,8 @@
             const grid = document.getElementById('soundGrid');
 
             grid.addEventListener('click', (e) => {
+                // *** 錯誤修正 ***
+                // 之前這裡是 e.g.closest，已修正為 e.target.closest
                 const card = e.target.closest('.sound-card');
                 if (!card) return;
 
