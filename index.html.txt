@@ -16,7 +16,7 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex items-center justify-center p-4">
 
-    <div class="container mx-auto max-w-5xl"> <!-- 稍微加寬一點 -->
+    <div class="container mx-auto max-w-5xl"> 
         <h1 class="text-3xl font-bold text-center mb-6">聲音圖卡</h1>
         <p class="text-center text-gray-600 dark:text-gray-400 mb-8">請點擊下方的任一圖片來播放聲音。</p>
 
@@ -35,10 +35,10 @@
                 <p class="text-center p-3 font-semibold">什麼都有書店</p>
             </div>
 
-            <!-- 卡片 3: 原來發明筷子不是為了吃飯 -->
+            <!-- 卡片 3: 原來發明筷子不是為了吃 -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-2">
-                <img src="原來發明筷子不是為了吃.jpg" alt="原來發明筷子不是為了吃飯" class="w-full h-auto object-cover aspect-square">
-                <p class="text-center p-3 font-semibold">原來發明筷子不是為了吃飯</p>
+                <img src="原來發明筷子不是為了吃.jpg" alt="原來發明筷子不是為了吃" class="w-full h-auto object-cover aspect-square">
+                <p class="text-center p-3 font-semibold">原來發明筷子不是為了吃</p>
             </div>
             
             <!-- 卡片 4: 只是玩笑話為什麼不能說 -->
@@ -47,7 +47,7 @@
                 <p class="text-center p-3 font-semibold">只是玩笑話為什麼不能說</p>
             </div>
 
-            <!-- 卡片 5: 怎麼睡成這樣 -->
+            <!-- 卡片 5: 怎麼睡成這樣 (已修正) -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-4">
                 <img src="怎麼睡成這樣.jpg" alt="怎麼睡成這樣" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">怎麼睡成這樣</p>
@@ -71,13 +71,13 @@
                 <p class="text-center p-3 font-semibold">猜猜我在比什麼</p>
             </div>
             
-            <!-- 卡片 9: 童話裡的建築大師 -->
+            <!-- 卡片 9: 童話裡的建築大師 (已修正) -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-8">
-                <img src="童話裡的建築大SI.jpg" alt="童話裡的建築大師" class="w-full h-auto object-cover aspect-square">
+                <img src="童話裡的建築大師.jpg" alt="童話裡的建築大師" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">童話裡的建築大師</p>
             </div>
 
-            <!-- 卡片 10: 逃離吧腳就是用來跑的 -->
+            <!-- 卡片 10: 逃離吧腳就是用來跑的 (已修正) -->
             <div class="sound-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-150 ease-in-out" data-sound-id="sound-9">
                 <img src="逃離吧腳就是用來跑的.jpg" alt="逃離吧腳就是用來跑的" class="w-full h-auto object-cover aspect-square">
                 <p class="text-center p-3 font-semibold">逃離吧腳就是用來跑的</p>
@@ -90,14 +90,14 @@
     <!-- 檔名必須和您上傳的 .m4a 檔案完全一致 -->
     <audio id="sound-0" src="不會寫字的獅子.m4a" preload="auto"></audio>
     <audio id="sound-1" src="什麼都有書店.m4a" preload="auto"></audio>
-    <audio id="sound-2" src="原來發明筷子不是為了吃飯.m4a" preload="auto"></audio>
+    <audio id="sound-2" src="原來發明筷子不是為了吃.m4a" preload="auto"></audio> 
     <audio id="sound-3" src="只是玩笑話為什麼不能說.m4a" preload="auto"></audio>
-    <audio id="sound-4" src="怎麼睡成這樣.m4a" preload="auto"></audio>
+    <audio id="sound-4" src="怎麼睡成這樣.m4a" preload="auto"></audio> <!-- (已修正) -->
     <audio id="sound-5" src="我有意見.m4a" preload="auto"></audio>
     <audio id="sound-6" src="我有理由.m4a" preload="auto"></audio>
     <audio id="sound-7" src="猜猜我在比什麼.m4a" preload="auto"></audio>
-    <audio id="sound-8" src="童話裡的建築大師.m4a" preload="auto"></audio>
-    <audio id="sound-9" src="逃離吧腳就是用來跑的.m4a" preload="auto"></audio>
+    <audio id="sound-8" src="童話裡的建築大師.m4a" preload="auto"></audio> <!-- (已修正) -->
+    <audio id="sound-9" src="逃離吧腳就是用來跑的.m4a" preload="auto"></audio> <!-- (已修正) -->
 
 
     <script>
@@ -105,8 +105,6 @@
             const grid = document.getElementById('soundGrid');
 
             grid.addEventListener('click', (e) => {
-                // *** 錯誤修正 ***
-                // 之前這裡是 e.g.closest，已修正為 e.target.closest
                 const card = e.target.closest('.sound-card');
                 if (!card) return;
 
@@ -114,7 +112,7 @@
                 const audio = document.getElementById(soundId);
 
                 if (audio) {
-                    // 先暫停所有其他正在播放的聲音 (如果有的話)
+                    // 先暫停所有其他正在播放的聲音
                     document.querySelectorAll('audio').forEach(a => {
                         if (a !== audio) {
                             a.pause();
@@ -126,8 +124,6 @@
                     audio.currentTime = 0; // 重新播放
                     audio.play().catch(error => {
                         console.error("播放聲音時發生錯誤:", error);
-                        // 提醒：在某些瀏覽器上 (尤其是手機)，可能需要用戶先點擊一下頁面
-                        // 才能自動播放聲音。
                     });
                 } else {
                     console.warn(`找不到 ID 為 ${soundId} 的聲音檔案`);
